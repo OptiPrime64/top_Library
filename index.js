@@ -44,6 +44,7 @@ function addBookToLibrary(e) {
 
 function removeFromLibrary(bookTitle) {
     myLibrary = myLibrary.filter(book => {
+        console.log(bookTitle, book.title)
         return book.title !== bookTitle;
     });
     saveLocal();
@@ -113,7 +114,7 @@ function updateList() {
         bookList.appendChild(bookDiv);
 
         delButton.addEventListener('click', () => {
-            removeFromLibrary(bookTitle.innerHTML);
+            removeFromLibrary(book.title);
         });
         bookCheck.addEventListener('change', () => {
             toggleCheck(book.title, bookCheck.checked);
